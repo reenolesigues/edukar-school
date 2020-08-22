@@ -17,7 +17,7 @@ spring:
     show-sql: true
       
   datasource:
-    url: jdbc:postgresql://localhost:5432/edukar
+    url: jdbc:postgresql://127.0.0.1:5432/edukar
     username: reenolesigues
     password: Lorenzolei3+
     initialization-mode: always

@@ -1,0 +1,22 @@
+version: ‘3’
+
+services:
+docker-mysql:
+image: mysql:latest
+environment:
+- MYSQL_ROOT_PASSWORD=MySQL_Num1
+- MYSQL_DATABASE=demographics
+- MYSQL_USER=test
+- MYSQL_PASSWORD=test1234
+spring-boot-jpa-docker-webapp:
+image: my_app_image
+depends_on:
+- docker-mysql
+ports:
+- 8080:8080
+environment:
+- DATABASE_HOST=docker-mysql
+- DATABASE_USER=test
+- DATABASE_PASSWORD=test1234
+- DATABASE_NAME=demographics
+- DATABASE_PORT=3306

@@ -16,6 +16,13 @@ docker {
     copySpec.from("build/libs/").into("build/libs/")
 }
 
+dockerRun {
+	name "${project.name}"
+    image "${project.name}:${project.version}"
+    ports '8081:8081'
+    clean true
+}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor	
